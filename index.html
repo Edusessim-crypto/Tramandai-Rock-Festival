@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tramandaí Rock Festival 2027 — 08 e 09 de Janeiro | Entrada Gratuita</title>
+<meta name="description" content="O Rock Encontra o Verão! Festival gratuito de rock em Tramandaí/RS, dias 08 e 09 de janeiro de 2027. Atrações nacionais, praça de alimentação e estrutura completa na Avenida Beira-Mar.">
+<meta property="og:title" content="Tramandaí Rock Festival 2027">
+<meta property="og:description" content="08 e 09 de janeiro — Entrada Gratuita — Avenida Beira-Mar, Tramandaí/RS">
+<meta property="og:image" content="https://placehold.co/1200x630/0A0A0A/FFD600?text=Tramandai+Rock+Festival+2027">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFD600">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== HEADER / NAVEGAÇÃO ===================== -->
+<header class="header" id="header">
+  <div class="header__inner">
+
+    <!-- Logo compacta -->
+    <a href="#inicio" class="logo logo--compact" aria-label="Tramandaí Rock Festival - Início">
+      <span class="logo__linha logo__linha--top">TRAMANDAÍ</span>
+      <span class="logo__linha logo__linha--main">
+        ROCK
+        <svg class="logo__raio" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+        </svg>
+      </span>
+      <span class="logo__linha logo__linha--bottom">FESTIVAL</span>
+    </a>
+
+    <!-- Menu principal (desktop) -->
+    <nav class="nav" aria-label="Navegação principal">
+      <ul class="nav__lista">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#festival">O Festival</a></li>
+        <li><a href="#edicao-2027">Edição 2027</a></li>
+        <li><a href="#programacao">Programação</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#acessibilidade">Acessibilidade</a></li>
+        <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#edicoes">Edições</a></li>
+        <li><a href="#patrocinio">Patrocínio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Redes sociais + acessibilidade (desktop) -->
+    <div class="header__acoes">
+      <div class="header__social" aria-label="Redes sociais">
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9v6l5-3z" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2 2 4 5 4"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.5-4.5A8 8 0 1 1 8.5 19.5z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6"/></svg>
+        </a>
+      </div>
+
+      <button class="btn-acessibilidade" aria-label="Abrir opções de acessibilidade" title="Acessibilidade">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="4" r="2"/>
+          <path d="M4 9h16M12 9v12M8 21l4-6 4 6M7 13l5-1 5 1"/>
+        </svg>
+      </button>
+
+      <!-- Botão hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Drawer mobile -->
+<nav class="menu-mobile" id="menu-mobile" aria-label="Navegação mobile">
+  <ul class="menu-mobile__lista">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#festival">O Festival</a></li>
+    <li><a href="#edicao-2027">Edição 2027</a></li>
+    <li><a href="#programacao">Programação</a></li>
+    <li><a href="#artistas">Artistas</a></li>
+    <li><a href="#experiencia">Experiência</a></li>
+    <li><a href="#acessibilidade">Acessibilidade</a></li>
+    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+    <li><a href="#noticias">Notícias</a></li>
+    <li><a href="#edicoes">Edições</a></li>
+    <li><a href="#patrocinio">Patrocínio</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="menu-mobile__social">
+    <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    </a>
+    <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9v6l5-3z" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" aria-label="TikTok" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2 2 4 5 4"/></svg>
+    </a>
+    <a href="#" aria-label="WhatsApp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.5-4.5A8 8 0 1 1 8.5 19.5z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6"/></svg>
+    </a>
+  </div>
+</nav>
+<div class="overlay" id="overlay"></div>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1920&h=1080&q=80');"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__conteudo">
+
+      <div class="logo logo--grande" aria-label="Tramandaí Rock Festival">
+        <span class="logo__linha logo__linha--top">TRAMANDAÍ</span>
+        <span class="logo__linha logo__linha--main">
+          ROCK
+          <svg class="logo__raio" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+          </svg>
+        </span>
+        <span class="logo__linha logo__linha--bottom">FESTIVAL</span>
+      </div>
+
+      <p class="hero__slogan">O ROCK ENCONTRA O VERÃO</p>
+
+      <div class="hero__info">
+        <p class="hero__info-linha">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          08 E 09 DE JANEIRO
+        </p>
+        <p class="hero__info-linha">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="hero__local">
+            AVENIDA BEIRA-MAR
+            <small>AO LADO DO LETREIRO EU AMO TRAMANDAÍ</small>
+          </span>
+        </p>
+      </div>
+
+      <span class="badge-gratuito">ENTRADA GRATUITA</span>
+
+      <!-- Contador regressivo -->
+      <div class="countdown" aria-live="polite">
+        <p class="countdown__label">FALTAM</p>
+        <div class="countdown__blocos">
+          <div class="countdown__bloco">
+            <span class="countdown__numero" id="cd-dias">00</span>
+            <span class="countdown__texto">Dias</span>
+          </div>
+          <div class="countdown__bloco">
+            <span class="countdown__numero" id="cd-horas">00</span>
+            <span class="countdown__texto">Horas</span>
+          </div>
+          <div class="countdown__bloco">
+            <span class="countdown__numero" id="cd-minutos">00</span>
+            <span class="countdown__texto">Minutos</span>
+          </div>
+          <div class="countdown__bloco">
+            <span class="countdown__numero" id="cd-segundos">00</span>
+            <span class="countdown__texto">Segundos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de CTAs -->
+      <div class="hero__ctas">
+        <a href="#programacao" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.5 1.6-6.8L2.2 9l6.9-.7z"/></svg>
+          Ver Programação
+        </a>
+        <a href="#artistas" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.5 1.6-6.8L2.2 9l6.9-.7z"/></svg>
+          Conheça as Atrações
+        </a>
+        <a href="#como-chegar" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Como Chegar
+        </a>
+        <a href="#experiencia" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Informações ao Público
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===================== BARRA DE DESTAQUES ===================== -->
+  <section class="destaques" aria-label="Destaques do festival">
+    <div class="destaques__inner">
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        2 Dias de Shows
+      </div>
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.6 6.8L12 16.9l-6.2 3.5 1.6-6.8L2.2 9l6.9-.7z"/></svg>
+        Atrações Nacionais
+      </div>
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="2" y="15" width="4" height="5" rx="1"/><rect x="18" y="15" width="4" height="5" rx="1"/></svg>
+        DJ nos Intervalos
+      </div>
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2v6a2 2 0 0 0 2 2v12M6 2v20M10 2v8M18 2c-2 0-3 2-3 5s1 4 3 4v11"/></svg>
+        Praça de Alimentação
+      </div>
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M4 9h16M12 9v12M8 21l4-6 4 6M7 13l5-1 5 1"/></svg>
+        Acessibilidade
+      </div>
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13c0-4 3-7 7-7"/><path d="M13 4a7 7 0 0 1 7 7c0 4-3 7-7 7"/><path d="M11 20v-9M13 4v9"/></svg>
+        Sustentabilidade
+      </div>
+      <div class="destaque-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Estrutura Completa
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GRID DE CONTEÚDO PRINCIPAL ===================== -->
+  <span id="festival" class="ancora-invisivel" aria-hidden="true"></span>
+
+  <!-- ===================== SEÇÃO: PROGRAMAÇÃO ===================== -->
+  <section class="secao secao--fundo-padrao" id="programacao">
+    <div class="secao__container">
+      <h2 class="secao__titulo secao__titulo--esquerda">Programação</h2>
+
+      <div class="tabs" role="tablist" aria-label="Dias do festival">
+        <button class="tab active" data-dia="sexta" role="tab" aria-selected="true">SEXTA 08/01</button>
+        <button class="tab" data-dia="sabado" role="tab" aria-selected="false">SÁBADO 09/01</button>
+      </div>
+
+      <ul class="lista-horarios" id="lista-sexta">
+        <li class="horario-item"><span class="horario-hora">17:30</span><span class="horario-nome">DJ de Abertura</span></li>
+        <li class="horario-item"><span class="horario-hora">18:00</span><span class="horario-nome">Banda 1</span></li>
+        <li class="horario-item"><span class="horario-hora">19:30</span><span class="horario-nome">DJ</span></li>
+        <li class="horario-item"><span class="horario-hora">19:50</span><span class="horario-nome">Banda 2</span></li>
+        <li class="horario-item"><span class="horario-hora">21:20</span><span class="horario-nome">DJ</span></li>
+        <li class="horario-item"><span class="horario-hora">21:40</span><span class="horario-nome">Banda 3</span></li>
+        <li class="horario-item"><span class="horario-hora">23:10</span><span class="horario-nome">DJ</span></li>
+        <li class="horario-item"><span class="horario-hora">23:30</span><span class="horario-nome">Banda 4</span></li>
+      </ul>
+
+      <ul class="lista-horarios" id="lista-sabado" hidden>
+        <li class="horario-item"><span class="horario-hora">17:30</span><span class="horario-nome">DJ de Abertura</span></li>
+        <li class="horario-item"><span class="horario-hora">18:00</span><span class="horario-nome">Banda 5</span></li>
+        <li class="horario-item"><span class="horario-hora">19:30</span><span class="horario-nome">DJ</span></li>
+        <li class="horario-item"><span class="horario-hora">19:50</span><span class="horario-nome">Banda 6</span></li>
+        <li class="horario-item"><span class="horario-hora">21:20</span><span class="horario-nome">DJ</span></li>
+        <li class="horario-item"><span class="horario-hora">21:40</span><span class="horario-nome">Banda 7</span></li>
+        <li class="horario-item"><span class="horario-hora">23:10</span><span class="horario-nome">DJ</span></li>
+        <li class="horario-item"><span class="horario-hora">23:30</span><span class="horario-nome">Banda 8</span></li>
+      </ul>
+
+      <a href="#programacao" class="btn-outline-full btn-outline-full--auto">Ver Programação Completa</a>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO: ATRAÇÕES CONFIRMADAS ===================== -->
+  <section class="secao secao--fundo-card" id="artistas">
+    <div class="secao__container">
+      <h2 class="secao__titulo secao__titulo--centro">Atrações Confirmadas</h2>
+
+      <div class="cards-atracoes cards-atracoes--secao">
+        <div class="card-atracao">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&h=520&q=80" alt="Guitarrista se apresentando no palco durante show de rock" loading="lazy">
+          <div class="card-atracao__info">
+            <p class="card-atracao__nome">Banda 1</p>
+            <p class="card-atracao__data">SEXTA 08/01 • <span>18:00</span></p>
+          </div>
+        </div>
+        <div class="card-atracao">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&h=520&q=80" alt="Vocalista cantando em show de rock ao vivo" loading="lazy">
+          <div class="card-atracao__info">
+            <p class="card-atracao__nome">Banda 2</p>
+            <p class="card-atracao__data">SEXTA 08/01 • <span>19:50</span></p>
+          </div>
+        </div>
+        <div class="card-atracao">
+          <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&h=520&q=80" alt="Baterista tocando em apresentação de banda de rock" loading="lazy">
+          <div class="card-atracao__info">
+            <p class="card-atracao__nome">Banda 3</p>
+            <p class="card-atracao__data">SEXTA 08/01 • <span>21:40</span></p>
+          </div>
+        </div>
+        <div class="card-atracao">
+          <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&h=520&q=80" alt="Multidão em show de rock com luzes de palco" loading="lazy">
+          <div class="card-atracao__info">
+            <p class="card-atracao__nome">Banda 4</p>
+            <p class="card-atracao__data">SEXTA 08/01 • <span>23:30</span></p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#artistas" class="btn-outline-full btn-outline-full--auto btn-outline-full--centro">Conheça Todas as Atrações</a>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO: COMO CHEGAR ===================== -->
+  <section class="secao secao--fundo-padrao secao--como-chegar" id="como-chegar">
+    <div class="secao__container">
+      <h2 class="secao__titulo secao__titulo--esquerda">Como Chegar</h2>
+
+      <div class="como-chegar__grid">
+        <div class="mapa-wrapper mapa-wrapper--grande">
+          <iframe
+            src="https://maps.google.com/maps?q=-29.9926956,-50.1269296&z=17&output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de localização do festival"></iframe>
+        </div>
+
+        <div class="como-chegar__info">
+
+          <div class="como-chegar__bloco">
+            <address class="endereco endereco--grande">
+              Avenida Beira-Mar<br>
+              Ao lado do letreiro Eu Amo Tramandaí<br>
+              Tramandaí/RS
+            </address>
+          </div>
+
+          <div class="como-chegar__bloco">
+            <p class="como-chegar__referencia">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Próximo ao letreiro Eu Amo Tramandaí
+            </p>
+          </div>
+
+          <div class="como-chegar__bloco">
+            <ul class="como-ir">
+              <li class="como-ir__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5 17V9l2-5h10l2 5v8M5 9h14"/></svg>
+                De carro: estacionamento gratuito no entorno
+              </li>
+              <li class="como-ir__item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="16.5" cy="19" r="1.5"/><path d="M3 11h18"/></svg>
+                De ônibus: linhas municipais com parada na Beira-Mar
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://maps.app.goo.gl/Evf3WN2rnh6yNPNP9" target="_blank" rel="noopener" class="btn-outline-full btn-outline-full--auto">Abrir no Mapa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO: NOTÍCIAS ===================== -->
+  <section class="secao secao--fundo-card" id="noticias">
+    <div class="secao__container">
+      <h2 class="secao__titulo secao__titulo--esquerda">Notícias</h2>
+
+      <div class="cards-noticias cards-noticias--secao">
+        <article class="card-noticia card-noticia--vertical">
+          <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=400&h=260&q=80" alt="Show de música ao vivo representando a programação do festival" loading="lazy">
+          <div class="card-noticia__info">
+            <p class="card-noticia__data">13/03/2026</p>
+            <p class="card-noticia__titulo">Programação Oficial Confirmada!</p>
+            <a href="#" class="card-noticia__link">Leia mais</a>
+          </div>
+        </article>
+        <article class="card-noticia card-noticia--vertical">
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=400&h=260&q=80" alt="Multidão em evento representando acessos e mobilidade do público" loading="lazy">
+          <div class="card-noticia__info">
+            <p class="card-noticia__data">05/12/2026</p>
+            <p class="card-noticia__titulo">Plano de Mobilidade e Acessos</p>
+            <a href="#" class="card-noticia__link">Leia mais</a>
+          </div>
+        </article>
+        <article class="card-noticia card-noticia--vertical">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&h=260&q=80" alt="Palco de show iluminado representando os patrocinadores do festival" loading="lazy">
+          <div class="card-noticia__info">
+            <p class="card-noticia__data">01/12/2026</p>
+            <p class="card-noticia__titulo">Patrocinadores Confirmados</p>
+            <a href="#" class="card-noticia__link">Leia mais</a>
+          </div>
+        </article>
+      </div>
+
+      <a href="#noticias" class="btn-outline-full btn-outline-full--auto btn-outline-full--centro">Ver Todas as Notícias</a>
+    </div>
+  </section>
+
+  <!-- Âncoras auxiliares para seções citadas no menu ainda não detalhadas no prompt -->
+  <span id="edicao-2027" class="ancora-invisivel" aria-hidden="true"></span>
+  <span id="experiencia" class="ancora-invisivel" aria-hidden="true"></span>
+  <span id="acessibilidade" class="ancora-invisivel" aria-hidden="true"></span>
+  <span id="sustentabilidade" class="ancora-invisivel" aria-hidden="true"></span>
+  <span id="edicoes" class="ancora-invisivel" aria-hidden="true"></span>
+
+  <!-- ===================== PATROCINADORES ===================== -->
+  <section class="patrocinadores" id="patrocinio">
+    <h2 class="patrocinadores__titulo">Patrocinadores e Apoiadores</h2>
+
+    <div class="patrocinadores__grupos">
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Realização</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Prefeitura+de+Tramandai" alt="Logo Prefeitura de Tramandaí" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Sec.+Turismo+e+Cultura" alt="Logo Secretaria de Turismo e Cultura" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Apresenta</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=SuaMarca" alt="Logo SuaMarca (apresentação)" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Patrocínio Master</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Governo+Federal" alt="Logo Governo Federal do Brasil" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Banrisul" alt="Logo Banrisul" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Ouro</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Corsan" alt="Logo Corsan" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Prata</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Sicredi" alt="Logo Sicredi" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Coca-Cola" alt="Logo Coca-Cola" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Bronze</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Red+Bull" alt="Logo Red Bull" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Vero" alt="Logo Vero" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Apoio Institucional</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Sao+Joao" alt="Logo São João" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Apoio Cultural</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Randon+Corp" alt="Logo Randon Corp" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=SEBRAE" alt="Logo SEBRAE" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Fecomercio+RS" alt="Logo Fecomércio RS" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grupo-patrocinio">
+        <p class="grupo-patrocinio__label">Parceiros de Mídia</p>
+        <div class="grupo-patrocinio__logos">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=Atlantida" alt="Logo Rádio Atlântida" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=GZH" alt="Logo GZH" loading="lazy">
+          <img src="https://placehold.co/120x50/1a1a1a/999?text=ABC%2B" alt="Logo ABC+" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="contato">
+  <a href="#inicio" class="logo logo--footer" aria-label="Tramandaí Rock Festival - Início">
+    <span class="logo__linha logo__linha--top">TRAMANDAÍ</span>
+    <span class="logo__linha logo__linha--main">
+      ROCK
+      <svg class="logo__raio" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+      </svg>
+    </span>
+    <span class="logo__linha logo__linha--bottom">FESTIVAL</span>
+  </a>
+
+  <p class="footer__evento">TRAMANDAÍ ROCK FESTIVAL • 08 E 09 DE JANEIRO DE 2027 • ENTRADA GRATUITA</p>
+  <p class="footer__endereco">Avenida Beira-Mar, ao lado do letreiro Eu Amo Tramandaí – Tramandaí/RS</p>
+
+  <nav class="footer__links" aria-label="Links institucionais">
+    <a href="#">Política de Privacidade</a> |
+    <a href="#">Termos de Uso</a> |
+    <a href="#acessibilidade">Acessibilidade</a> |
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <p class="footer__copy">© 2026 Tramandaí Rock Festival – Todos os direitos reservados</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
