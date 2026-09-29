@@ -1,5 +1,5 @@
 /* ============================================================
-   TCHÊ ROCK FESTIVAL 2027 — ESTILOS
+   TCHÊ ROCK TRAMANDAÍ 2027 — ESTILOS
    Mobile-first · breakpoints: 480, 768, 1024, 1280, 1440px
    ============================================================ */
 
@@ -205,7 +205,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   text-shadow: 0 2px 12px rgba(0, 0, 0, .6);
 }
 .hero__tagline::after {
-  content: ''; position: absolute; left: 10%; right: -4%; bottom: -.5rem; height: .35rem;
+  content: ''; position: absolute; left: 9%; right: 9%; bottom: -.1em; height: .2em; min-height: 4px;
   background: var(--red); border-radius: 50% 10% 50% 10%; transform: rotate(-2deg);
 }
 
@@ -266,6 +266,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     align-content: center; align-items: start; gap: 1.5rem 2rem;
     padding-block: 3.5rem 4rem;
   }
+  .hero__tagline::after { left: 0; right: 14%; }
   .hero__tagline { grid-area: tagline; justify-self: start; text-align: left; font-size: clamp(1.8rem, 2.6vw, 2.6rem); margin-top: .5rem; }
   .hero__center { grid-area: center; justify-self: center; margin-top: -2.5rem; }
   .hero__card { grid-area: card; justify-self: end; }

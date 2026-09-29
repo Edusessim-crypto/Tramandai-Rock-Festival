@@ -1,10 +1,10 @@
-# Tchê Rock Festival 2027
+# Tchê Rock Tramandaí 2027
 
-Site oficial (estático) do **Tchê Rock Festival 2027** — "Aqui o rock encontra o mar!".
+Site oficial (estático) do **Tchê Rock Tramandaí 2027** — "Aqui o rock gaúcho encontra o mar!".
 
 Festival gratuito nos dias **08 e 09 de janeiro de 2027**, na Avenida Beira-Mar, ao lado do letreiro "Eu Amo Tramandaí", em **Tramandaí/RS**.
 
-> Tramandaí é a cidade-sede do festival. O nome oficial do evento é **Tchê Rock Festival**.
+> Tramandaí é a cidade-sede do festival. O nome oficial do evento é **Tchê Rock Tramandaí**.
 
 ## Stack
 

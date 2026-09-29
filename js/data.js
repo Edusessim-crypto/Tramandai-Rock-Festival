@@ -1,5 +1,5 @@
 /* ============================================================
-   TCHÊ ROCK FESTIVAL 2027 — DADOS DO SITE
+   TCHÊ ROCK TRAMANDAÍ 2027 — DADOS DO SITE
    ------------------------------------------------------------
    Fonte única dos conteúdos dinâmicos da home:
    evento (contador), redes sociais, programação e apoiadores.
@@ -13,7 +13,7 @@ window.FESTIVAL = {
 
   /* ---------- Evento ---------- */
   evento: {
-    nome: 'Tchê Rock Festival',
+    nome: 'Tchê Rock Tramandaí',
     edicao: 2027,
     // Contador regressivo do hero. PENDENTE: ajustar para o horário oficial do primeiro show.
     inicio: '2027-01-08T17:30:00-03:00',
@@ -31,7 +31,7 @@ window.FESTIVAL = {
   ],
 
   /* ---------- Programação ----------
-     Line-up conforme o material oficial do Tchê Rock Festival.
+     Line-up conforme o material oficial do Tchê Rock Tramandaí.
      foto: caminho do arquivo, ex.: 'assets/img/artistas/nei-van-soria.jpg'.
            Sem foto, o card mostra um fundo provisório com o nome.
      hora: opcional — preencher quando os horários oficiais forem divulgados.

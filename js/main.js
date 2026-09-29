@@ -1,5 +1,5 @@
 /* ============================================================
-   TCHÊ ROCK FESTIVAL 2027 — SCRIPTS
+   TCHÊ ROCK TRAMANDAÍ 2027 — SCRIPTS
    Conteúdos dinâmicos vêm de js/data.js (window.FESTIVAL).
    ============================================================ */
 
