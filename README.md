@@ -18,11 +18,12 @@ Festival gratuito nos dias **08 e 09 de janeiro de 2027**, na Avenida Beira-Mar,
 1. Header (logo · menu · redes sociais · CTA #TchêRock)
 2. Hero (foto de palco, logo, frases manuscritas, card de data/local, "Evento gratuito")
 3. Faixa de diferenciais
-4. Programação 2027 (cards de artistas divididos por dia)
-5. Bloco "Tramandaí te espera!"
-6. Blocos institucionais (Estrutura completa · Turismo · Sustentabilidade)
-7. Realização e apoio
-8. Footer
+4. Sobre o festival
+5. Programação 2027 (cards de artistas divididos por dia)
+6. Bloco "Tramandaí te espera!"
+7. Blocos institucionais (Estrutura completa · Turismo · Sustentabilidade)
+8. Contato (formulário → e-mail)
+9. Footer com Realização
 
 ```
 /
@@ -43,7 +44,7 @@ Festival gratuito nos dias **08 e 09 de janeiro de 2027**, na Avenida Beira-Mar,
 | O quê | Onde |
 |---|---|
 | Artistas por dia (nome, foto, horário opcional) | `js/data.js` → `programacao` |
-| Realização e apoio (nome, logo) | `js/data.js` → `apoiadores` |
+| Realização (nome, logo) | `js/data.js` → `apoiadores` |
 | Redes sociais (header, menu e footer) | `js/data.js` → `social` |
 | Data/hora do contador ("Faltam X dias") | `js/data.js` → `evento.inicio` |
 
@@ -59,14 +60,23 @@ Tokens em `css/style.css` (`:root`): preto `#0A0A0A` · grafites `#111111`/`#181
 
 - **Logo oficial:** `assets/brand/tche-rock-logo.svg` é um **wordmark provisório** (header, hero e footer). Substitua pelo arquivo oficial **com o mesmo nome**.
 - **Favicon/ícones** (`favicon.ico`, `assets/brand/favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) e `og-image.jpg`: provisórios.
-- **Fotos dos artistas:** preencher `foto` de cada atração em `js/data.js`.
-- **Grafia de "Velhavô":** confirmar o nome oficial da banda.
 - **Horários dos shows:** campo `hora` em `js/data.js` (opcional, aparece no card).
-- **Logos de realização/apoio:** Gestor Produtora, Secretaria Municipal de Turismo, "Tramandaí — Quem conhece ama".
+- **Hero:** usar foto com o letreiro "Eu Amo Tramandaí" (arquivo ainda não recebido).
+- **Formulário:** configurar `RESEND_API_KEY` (e `CONTACT_FROM`) na Vercel.
 - **Fotos:** hero, Tramandaí e blocos institucionais usam banco de imagens; trocar por fotos reais do festival e da orla de Tramandaí.
 - **Redes sociais:** URLs ainda `#` em `js/data.js`.
 - **Domínio:** ativar `canonical`/`og:url` e ajustar `og:image`/`twitter:image` e o JSON-LD (hoje apontam para `tcherockfestival.vercel.app`).
 - `assets/brand/logo-horizontal.svg` e `logo-vertical.svg` são placeholders da identidade anterior, mantidos no projeto mas não usados.
+
+## Formulário de contato
+
+`api/contato.js` é uma função serverless da Vercel que envia o e-mail pela API da Resend (sem dependências). Variáveis de ambiente na Vercel:
+
+- `RESEND_API_KEY` (obrigatória) — sem ela o formulário mostra a mensagem de erro amigável.
+- `CONTACT_TO` (opcional) — padrão `Daniel.gestorprodutora@gmail.com`.
+- `CONTACT_FROM` (opcional) — remetente de domínio verificado na Resend. O padrão `onboarding@resend.dev` só entrega para o e-mail dono da conta Resend.
+
+Localmente (`python3 -m http.server`) a rota `/api/contato` não existe; use `vercel dev` para testar o envio.
 
 ## Rodando localmente
 

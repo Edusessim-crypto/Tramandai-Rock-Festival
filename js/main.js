@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const [, mes, d] = dia.data.split('-');
       const cards = dia.atracoes.map((item) => {
         const midia = item.foto
-          ? `<img ${atributosImagem(item.foto, [320, 480, 640], 3 / 4)} sizes="(min-width: 1024px) 14vw, 45vw"
-              alt="${escapar(item.alt || item.nome)}" loading="lazy" decoding="async" width="480" height="640">`
-          : `<span class="artist-card__placeholder" aria-hidden="true">${icone('guitar')}</span>`;
+          ? `<img ${atributosImagem(item.foto, [320, 480, 640], 3 / 4)} sizes="(min-width: 1200px) 30vw, (min-width: 600px) 50vw, 100vw"
+              alt="${escapar(item.alt || item.nome)}" loading="lazy" decoding="async" width="480" height="640"${item.pos ? ` style="object-position:${escapar(item.pos)}"` : ''}>`
+          : `<span class="artist-card__placeholder" aria-hidden="true"><img src="assets/brand/tche-rock-logo.svg" alt="" width="415" height="166"></span>`;
         const hora = item.hora
           ? `<time class="artist-card__time" datetime="${dia.data}T${escapar(item.hora)}-03:00">${escapar(item.hora)}</time>` : '';
         return `
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('');
 
       return `
-        <article class="lineup__day" style="--cards:${dia.atracoes.length}" aria-labelledby="dia-${dia.id}">
+        <article class="lineup__day" aria-labelledby="dia-${dia.id}">
           <header class="day-badge" id="dia-${dia.id}">
             <time class="day-badge__date" datetime="${dia.data}">
               <span class="day-badge__num">${d}</span>
@@ -77,12 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </time>
             <span class="day-badge__weekday">${escapar(dia.dia)}</span>
           </header>
-          <ul class="lineup__cards">${cards}</ul>
+          <ul class="lineup__cards" data-cards="${dia.atracoes.length}">${cards}</ul>
         </article>`;
     }).join('');
   }
 
-  /* ---------- Realização e apoio ---------- */
+  /* ---------- Realização ---------- */
   function renderizarApoiadores() {
     const raiz = $('[data-apoiadores]');
     if (!raiz) return;
@@ -223,6 +223,108 @@ document.addEventListener('DOMContentLoaded', () => {
     elementos.forEach((el) => observador.observe(el));
   }
 
+  /* ============================================================
+     7. FORMULÁRIO DE CONTATO (envio via /api/contato)
+     ============================================================ */
+  function iniciarFormulario() {
+    const form = $('[data-form-contato]');
+    if (!form) return;
+    const botao = $('[data-form-enviar]', form);
+    const textoBotao = $('[data-form-enviar-texto]', form);
+    const status = $('[data-form-status]', form);
+    const campos = ['nome', 'email', 'whatsapp', 'mensagem'];
+    let enviando = false;
+
+    const somenteDigitos = (v) => v.replace(/\D/g, '');
+
+    // Máscara brasileira: (DD) 9XXXX-XXXX ou (DD) XXXX-XXXX
+    function mascarar(valor) {
+      let d = somenteDigitos(valor);
+      if (d.startsWith('55') && d.length > 11) d = d.slice(2);
+      d = d.slice(0, 11);
+      if (d.length <= 2) return d ? `(${d}` : '';
+      if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+      if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+      return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+    }
+
+    const validadores = {
+      nome: (v) => (v.trim().length >= 2 ? '' : 'Informe seu nome.'),
+      email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Informe um e-mail válido.'),
+      whatsapp: (v) => {
+        const d = somenteDigitos(v);
+        const ddd = Number(d.slice(0, 2));
+        const ok = (d.length === 11 && d[2] === '9') || d.length === 10;
+        return ok && ddd >= 11 && ddd <= 99 ? '' : 'Informe um WhatsApp válido com DDD.';
+      },
+      mensagem: (v) => (v.trim().length >= 5 ? '' : 'Escreva sua mensagem.'),
+    };
+
+    function validarCampo(nome) {
+      const campo = form.elements[nome];
+      const erro = validadores[nome](campo.value);
+      const alvo = $(`[data-erro="${nome}"]`, form);
+      alvo.textContent = erro;
+      campo.setAttribute('aria-invalid', erro ? 'true' : 'false');
+      if (erro) campo.setAttribute('aria-describedby', alvo.id || (alvo.id = `erro-${nome}`));
+      else campo.removeAttribute('aria-describedby');
+      return !erro;
+    }
+
+    function mostrar(tipo, texto) {
+      status.dataset.tipo = tipo;
+      status.textContent = texto;
+    }
+
+    form.elements.whatsapp.addEventListener('input', (e) => { e.target.value = mascarar(e.target.value); });
+    campos.forEach((nome) => {
+      form.elements[nome].addEventListener('blur', () => validarCampo(nome));
+      form.elements[nome].addEventListener('input', () => {
+        if (form.elements[nome].getAttribute('aria-invalid') === 'true') validarCampo(nome);
+      });
+    });
+
+    form.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      if (enviando) return;
+      status.textContent = '';
+      delete status.dataset.tipo;
+
+      const resultados = campos.map(validarCampo);
+      if (resultados.includes(false)) {
+        form.elements[campos[resultados.indexOf(false)]].focus();
+        return;
+      }
+
+      enviando = true;
+      botao.disabled = true;
+      textoBotao.textContent = 'Enviando…';
+      try {
+        const resposta = await fetch(form.getAttribute('action'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome: form.elements.nome.value.trim(),
+            email: form.elements.email.value.trim(),
+            whatsapp: form.elements.whatsapp.value.trim(),
+            mensagem: form.elements.mensagem.value.trim(),
+            site: form.elements.site.value,
+          }),
+        });
+        if (!resposta.ok) throw new Error(String(resposta.status));
+        form.reset();
+        campos.forEach((nome) => form.elements[nome].removeAttribute('aria-invalid'));
+        mostrar('ok', 'Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      } catch (erro) {
+        mostrar('erro', 'Não foi possível enviar agora. Tente novamente em alguns instantes.');
+      } finally {
+        enviando = false;
+        botao.disabled = false;
+        textoBotao.textContent = 'Enviar mensagem';
+      }
+    });
+  }
+
   /* ---------- Inicialização ---------- */
   renderizarSocial();
   renderizarProgramacao();
@@ -232,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
   iniciarHeader();
   iniciarMenuAtivo();
   iniciarRevelar();
+  iniciarFormulario();
   $$('[data-ano]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
 });

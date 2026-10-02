@@ -59,13 +59,13 @@
   "isAccessibleForFree": true,
   "image": ["https://tcherockfestival.vercel.app/assets/img/og-image.jpg"],
   "performer": [
-    { "@type": "MusicGroup", "name": "Eternos Cascavelhetes" },
+    { "@type": "MusicGroup", "name": "Diego Lopes e os Dínamos" },
     { "@type": "Person", "name": "Alemão Ronaldo" },
-    { "@type": "Person", "name": "Duda Calvin" },
-    { "@type": "MusicGroup", "name": "Velhavô" },
+    { "@type": "MusicGroup", "name": "Eternos Cascavelletes" },
+    { "@type": "MusicGroup", "name": "Velhavó" },
     { "@type": "Person", "name": "Bixo Cabeludo" },
-    { "@type": "Person", "name": "Nei Van Soria" },
-    { "@type": "MusicGroup", "name": "Acústicos e Valvulados" }
+    { "@type": "Person", "name": "Neivan Soria" },
+    { "@type": "MusicGroup", "name": "Acústicos & Valvulados" }
   ],
   "organizer": { "@type": "Organization", "name": "Gestor Produtora" },
   "location": {
@@ -197,7 +197,7 @@
   </section>
 
   <!-- ===================== 3 · FAIXA DE DIFERENCIAIS ===================== -->
-  <section class="features" id="festival" aria-label="Diferenciais do festival">
+  <section class="features" aria-label="Diferenciais do festival">
     <ul class="container features__list">
       <li class="features__item">
         <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-guitar"></use></svg>
@@ -220,6 +220,34 @@
         <span>Evento<br>sustentável</span>
       </li>
     </ul>
+  </section>
+
+  <!-- ===================== 3.5 · SOBRE O FESTIVAL ===================== -->
+  <section class="section about" id="festival" aria-labelledby="sobre-titulo">
+    <div class="container about__inner">
+      <div class="about__text">
+        <p class="about__eyebrow">Sobre o festival</p>
+        <h2 class="section-title" id="sobre-titulo">Aqui o rock gaúcho<br>encontra o <span class="text-red">mar!</span></h2>
+        <p class="about__lead">O Tchê Rock Tramandaí é um festival presencial que reúne música, cultura e turismo
+          à beira-mar, em <strong>Tramandaí</strong>, a capital das praias.</p>
+        <p>Dois dias de rock gaúcho ao vivo, um encontro de gerações com entrada gratuita,
+          ao lado do letreiro &ldquo;Eu Amo Tramandaí&rdquo;. Confira a programação logo abaixo.</p>
+      </div>
+      <ul class="about__facts">
+        <li class="about__fact">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"></use></svg>
+          <span><strong>08 e 09 de janeiro</strong>de 2027</span>
+        </li>
+        <li class="about__fact">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg>
+          <span><strong>Avenida Beira-Mar</strong>Tramandaí/RS</span>
+        </li>
+        <li class="about__fact">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-guitar"></use></svg>
+          <span><strong>Evento gratuito</strong>Rock gaúcho ao vivo</span>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- ===================== 4 · PROGRAMAÇÃO ===================== -->
@@ -299,10 +327,79 @@
     </article>
   </section>
 
+  <!-- ===================== 6.5 · CONTATO ===================== -->
+  <section class="section contact" id="contato" aria-labelledby="contato-titulo">
+    <div class="container contact__inner">
+      <div class="contact__intro">
+        <p class="about__eyebrow">Contato</p>
+        <h2 class="section-title" id="contato-titulo">Fale com o<br><span class="text-red">Tchê Rock</span></h2>
+        <p class="contact__lead">Quer falar com a produção, tirar dúvidas ou saber mais sobre o festival?
+          Preencha o formulário e nossa equipe entra em contato.</p>
+
+        <ul class="contact__topics" aria-label="Assuntos">
+          <li>Dúvidas sobre o festival</li>
+          <li>Contato com a produção</li>
+          <li>Informações gerais do evento</li>
+        </ul>
+
+        <ul class="contact__info">
+          <li class="contact__info-item">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg>
+            <span><strong>Produção e informações</strong>Realização Gestor Produtora</span>
+          </li>
+          <li class="contact__info-item">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg>
+            <span><strong>Tramandaí / RS</strong>Avenida Beira-Mar · 08 e 09 de janeiro de 2027</span>
+          </li>
+          <li class="contact__info-item">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"></use></svg>
+            <span><strong>Resposta pelo seu contato</strong>Retornamos pelo e-mail ou WhatsApp informado no formulário</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form" data-form-contato action="/api/contato" method="post" novalidate>
+        <div class="form__head">
+          <p class="form__title">Envie sua mensagem</p>
+          <p class="form__note">Todos os campos são obrigatórios.</p>
+        </div>
+        <div class="form__field">
+          <label for="c-nome">Nome</label>
+          <input id="c-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome completo" maxlength="120" required>
+          <p class="form__error" data-erro="nome" role="alert"></p>
+        </div>
+        <div class="form__field">
+          <label for="c-email">E-mail</label>
+          <input id="c-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@exemplo.com" maxlength="160" required>
+          <p class="form__error" data-erro="email" role="alert"></p>
+        </div>
+        <div class="form__field">
+          <label for="c-whatsapp">WhatsApp</label>
+          <input id="c-whatsapp" name="whatsapp" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(51) 99999-9999" maxlength="16" required>
+          <p class="form__error" data-erro="whatsapp" role="alert"></p>
+        </div>
+        <div class="form__field">
+          <label for="c-mensagem">Mensagem</label>
+          <textarea id="c-mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" maxlength="2000" required></textarea>
+          <p class="form__error" data-erro="mensagem" role="alert"></p>
+        </div>
+        <!-- Anti-spam: invisível para pessoas; robôs costumam preencher -->
+        <div class="form__trap" aria-hidden="true">
+          <label for="c-site">Não preencha este campo</label>
+          <input id="c-site" name="site" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn btn--red form__submit" type="submit" data-form-enviar>
+          <span data-form-enviar-texto>Enviar mensagem</span>
+        </button>
+        <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
 </main>
 
-<!-- ===================== 7 · APOIADORES / REALIZAÇÃO + 8 · FOOTER ===================== -->
-<footer class="site-footer" id="contato">
+<!-- ===================== 7 · REALIZAÇÃO + 8 · FOOTER ===================== -->
+<footer class="site-footer">
   <div class="container site-footer__brands">
     <div class="site-footer__signature">
       <a href="#inicio" class="site-footer__logo">

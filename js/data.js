@@ -42,9 +42,9 @@ window.FESTIVAL = {
       dia: 'Sexta-feira',
       data: '2027-01-08',
       atracoes: [
-        { nome: 'Eternos Cascavelhetes', foto: '', alt: '' },
-        { nome: 'Alemão Ronaldo', foto: '', alt: '' },
-        { nome: 'Duda Calvin da Tequila Baby', foto: '', alt: '' },
+        { nome: 'Diego Lopes e os Dínamos', foto: 'assets/img/artistas/diego-lopes-e-os-dinamos.jpg', alt: 'Diego Lopes e os Dínamos, os quatro integrantes sorrindo diante de uma parede de tijolos', pos: '50% 10%' },
+        { nome: 'Alemão Ronaldo', foto: 'assets/img/artistas/alemao-ronaldo.jpg', alt: 'Alemão Ronaldo, de óculos escuros e jaqueta preta, sentado, em retrato em preto e branco', pos: '50% 5%' },
+        { nome: 'Eternos Cascavelletes', foto: 'assets/img/artistas/eternos-cascavelletes.jpg', alt: 'Os cinco integrantes dos Eternos Cascavelletes, de roupas escuras, diante de um portão de galpão', pos: '50% 50%' },
       ],
     },
     {
@@ -52,29 +52,25 @@ window.FESTIVAL = {
       dia: 'Sábado',
       data: '2027-01-09',
       atracoes: [
-        // PENDENTE: confirmar a grafia oficial do nome da banda
-        { nome: 'Velhavô', foto: '', alt: '' },
-        { nome: 'Bixo Cabeludo', foto: '', alt: '' },
-        { nome: 'Nei Van Soria', foto: '', alt: '' },
-        { nome: 'Acústicos e Valvulados', foto: '', alt: '' },
+        { nome: 'Velhavó', foto: 'assets/img/artistas/velhavo.jpg', alt: 'Os cinco integrantes da Velhavó no palco, diante do telão com o logo da banda', pos: '50% 25%' },
+        { nome: 'Bixo Cabeludo', foto: 'assets/img/artistas/bixo-cabeludo.jpg', alt: 'Os três integrantes do Bixo Cabeludo diante de uma cortina vermelha', pos: '50% 20%' },
+        { nome: 'Neivan Soria', foto: 'assets/img/artistas/neivan-soria.jpg', alt: 'Neivan Soria, de óculos escuros, em retrato em preto e branco', pos: '50% 60%' },
+        { nome: 'Acústicos & Valvulados', foto: 'assets/img/artistas/acusticos-e-valvulados.jpg', alt: 'Integrantes dos Acústicos & Valvulados, em grupo, ao pôr do sol', pos: '50% 50%' },
       ],
     },
   ],
 
-  /* ---------- Realização e apoio (rodapé) ----------
+  /* ---------- Realização (rodapé) ----------
      logo: caminho do arquivo (ex.: 'assets/img/apoiadores/gestor.svg').
            Sem logo, o nome aparece em um espaço reservado.
-     PENDENTE: arquivos de logo oficiais de cada marca. */
+     Ordem: Gestor Produtora · Secretaria Municipal de Turismo · Prefeitura. */
   apoiadores: [
     {
       categoria: 'Realização',
-      marcas: [{ nome: 'Gestor Produtora', logo: '' }],
-    },
-    {
-      categoria: 'Apoio',
       marcas: [
-        { nome: 'Secretaria Municipal de Turismo', logo: '' },
-        { nome: 'Tramandaí — Quem conhece ama', logo: '' },
+        { nome: 'Gestor Produtora', logo: 'assets/img/apoiadores/gestor-produtora.png' },
+        { nome: 'Secretaria Municipal de Turismo', logo: 'assets/img/apoiadores/secretaria-turismo.jpg' },
+        { nome: 'Prefeitura de Tramandaí', logo: 'assets/img/apoiadores/prefeitura-tramandai.png' },
       ],
     },
   ],
