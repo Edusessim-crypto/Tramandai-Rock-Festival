@@ -365,8 +365,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .section-head__rule { flex: 1; max-width: 260px; height: 3px; background: var(--red); }
 
-.lineup__days { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
-.lineup__day { display: grid; gap: 1rem; }
+.lineup__board { display: grid; gap: 1.75rem; }
 
 /* Identificação do dia: selo vermelho + dia da semana + filete */
 .day-badge { display: flex; align-items: center; gap: .9rem; }
@@ -381,18 +380,48 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-family: var(--font-condensed); font-weight: 700; font-size: 1.05rem; letter-spacing: .1em; text-transform: uppercase;
 }
 
-/* Cards: foto horizontal (bandas aparecem inteiras) + faixa do nome abaixo da foto.
-   1 coluna no celular · 2 colunas no tablet · 3 (08) e 4 (09) por linha no desktop */
-.lineup__cards { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+/* Bloco único: carrossel em cima e listas dos dias embaixo (celular/tablet);
+   listas à esquerda, ~40%, e carrossel à direita, ~60% (desktop) */
+.lineup__board > .carousel { order: -1; }
+.lineup__aside { display: grid; gap: 2rem; align-content: start; min-width: 0; }
+.lineup__group { display: grid; gap: .75rem; align-content: start; min-width: 0; }
+/* Selo do dia da banda em exibição em destaque; o do outro dia atenuado */
+.lineup__group .day-badge { opacity: .4; transition: opacity .3s var(--ease); }
+.lineup__group.is-active .day-badge { opacity: 1; }
+
+/* Lista de bandas: a exibida no carrossel fica vermelha com filete lateral */
+.lineup__bands { display: grid; gap: .1rem; }
+.lineup__band {
+  position: relative; display: block; width: 100%; min-height: 44px; padding: .5rem 0 .5rem 1.1rem;
+  color: var(--gray); text-align: left;
+  font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 5.6vw, 1.6rem);
+  line-height: 1.1; text-transform: uppercase; letter-spacing: .01em; text-wrap: balance;
+  transition: color .3s var(--ease);
+}
+.lineup__band::before {
+  content: ''; position: absolute; left: 0; top: .4rem; bottom: .4rem; width: 3px;
+  background: var(--line); transition: background-color .3s var(--ease);
+}
+.lineup__band:hover { color: var(--white); }
+.lineup__band[aria-current="true"] { color: var(--red); }
+.lineup__band[aria-current="true"]::before { background: var(--red); }
+
+/* Carrossel: 1 banda por vez, foto 4:3 + faixa do nome (mesmo card de antes) */
+.carousel { position: relative; min-width: 0; }
+.carousel:focus-visible { outline-offset: 6px; }
+.carousel__stage { position: relative; }
+.carousel__viewport { overflow: hidden; touch-action: pan-y; }
+.carousel__track { display: flex; transition: transform .5s var(--ease); will-change: transform; }
+.carousel__slide { display: flex; flex: 0 0 100%; min-width: 0; }
+
 .artist-card {
-  display: flex; flex-direction: column; overflow: hidden;
+  display: flex; flex-direction: column; flex: 1; overflow: hidden;
   background: var(--black-2); border: 1px solid var(--line);
   transition: border-color .3s var(--ease);
 }
-.artist-card__media { position: relative; overflow: hidden; aspect-ratio: 3 / 2; background: var(--black-3); }
+.artist-card__media { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--black-3); }
 .artist-card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
-.artist-card:hover { border-color: var(--red); }
-.artist-card:hover .artist-card__media img { transform: scale(1.04); }
+.carousel__stage:hover .artist-card { border-color: var(--red); }
 /* Sem foto: fundo neutro com a marca do festival bem apagada */
 .artist-card__placeholder {
   position: absolute; inset: 0; display: grid; place-items: center;
@@ -406,29 +435,63 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-family: var(--font-display); font-weight: 400; font-size: clamp(1.3rem, 5.6vw, 1.6rem);
   line-height: 1.1; text-transform: uppercase; letter-spacing: .01em; text-wrap: balance;
 }
-.artist-card__time { display: block; margin-top: .25rem; color: var(--gray); font-family: var(--font-condensed); font-weight: 600; letter-spacing: .06em; }
+.artist-card__meta {
+  margin-top: .3rem; color: var(--gray);
+  font-family: var(--font-condensed); font-weight: 600; font-size: .95rem; line-height: 1.2; letter-spacing: .1em; text-transform: uppercase;
+}
 
+/* Setas nas laterais, centralizadas na altura da foto */
+.carousel__controls {
+  position: absolute; inset: 0 0 auto; aspect-ratio: 4 / 3;
+  display: flex; align-items: center; justify-content: space-between; padding-inline: .6rem;
+  pointer-events: none;
+}
+.carousel__arrow {
+  display: grid; place-items: center; width: 44px; height: 44px; pointer-events: auto;
+  background: rgba(10, 10, 10, .65); border: 1px solid rgba(255, 255, 255, .25); border-radius: var(--radius);
+  transition: background-color .2s var(--ease), border-color .2s var(--ease);
+}
+.carousel__arrow:hover { background: var(--red); border-color: var(--red); }
+.carousel__arrow .icon { width: 22px; height: 22px; }
+.carousel__arrow--prev .icon { transform: scaleX(-1); }
+
+/* Indicadores em traço (mesma linguagem do filete vermelho dos títulos),
+   com um espaço maior separando os dias */
+.carousel__dots { display: flex; justify-content: center; gap: 1.1rem; margin-top: .9rem; }
+.carousel__dots-group { display: flex; gap: .4rem; }
+.carousel__dot { display: grid; align-items: center; width: 32px; height: 24px; }
+.carousel__dot::before {
+  content: ''; height: 3px; background: rgba(255, 255, 255, .25);
+  transition: background-color .3s var(--ease);
+}
+.carousel__dot:hover::before { background: var(--gray-2); }
+.carousel__dot[aria-current="true"]::before { background: var(--red); }
+
+/* Listas dos dois dias lado a lado quando cabem */
 @media (min-width: 600px) {
-  /* 2 colunas; no dia com 3 atrações, o último card fica centralizado com o mesmo tamanho */
-  .lineup__cards { grid-template-columns: repeat(4, 1fr); }
-  .lineup__cards > li { grid-column: span 2; }
-  .lineup__cards > li:last-child:nth-child(odd) { grid-column: 2 / span 2; }
-  .artist-card__name { font-size: clamp(1.2rem, 2.6vw, 1.5rem); }
+  .lineup__aside { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+}
+@media (min-width: 768px) {
+  .lineup__band, .artist-card__name { font-size: clamp(1.5rem, 2.6vw, 1.8rem); }
+  .carousel__controls { padding-inline: 1rem; }
+  .carousel__arrow { width: 52px; height: 52px; }
 }
 @media (min-width: 1024px) {
-  .lineup__day { gap: 1.25rem; }
-  .lineup__cards { gap: 1rem; }
+  .lineup__board { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(2rem, 4vw, 3.5rem); }
+  .lineup__board > .carousel { order: 0; }
+  /* Coluna da lista com a altura do card (topo e base alinhados);
+     a sobra vira espaço entre os dois dias. O padding desconta os traços. */
+  .lineup__aside {
+    display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+    padding-bottom: calc(.9rem + 24px);
+  }
+  .lineup__group { gap: .9rem; }
+  .lineup__band { min-height: 0; padding: .45rem 0 .45rem 1.4rem; font-size: clamp(1.7rem, 2.4vw, 2.4rem); }
+  .lineup__band::before { width: 4px; }
   .day-badge__num { font-size: 2.4rem; }
   .day-badge__month { font-size: 1.6rem; }
   .day-badge__weekday { font-size: 1.25rem; }
-}
-@media (min-width: 1200px) {
-  .lineup__cards { grid-template-columns: repeat(var(--cols, 4), 1fr); }
-  .lineup__cards > li, .lineup__cards > li:last-child:nth-child(odd) { grid-column: auto; }
-  .lineup__cards[data-cards="3"] { --cols: 3; }
-  .lineup__cards[data-cards="3"] .artist-card__media { aspect-ratio: 4 / 3; }
-  .lineup__cards[data-cards="3"] .artist-card__name { font-size: clamp(1.5rem, 1.9vw, 1.9rem); }
-  .lineup__cards[data-cards="4"] .artist-card__name { font-size: clamp(1.2rem, 1.45vw, 1.45rem); }
+  .artist-card__name { font-size: clamp(1.6rem, 2vw, 2rem); }
   .artist-card__body { padding: .9rem 1.1rem 1rem; }
 }
 

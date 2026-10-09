@@ -19,7 +19,7 @@ Festival gratuito nos dias **08 e 09 de janeiro de 2027**, na Avenida Beira-Mar,
 2. Hero (foto de palco, logo, frases manuscritas, card de data/local, "Evento gratuito")
 3. Faixa de diferenciais
 4. Sobre o festival
-5. Programação 2027 (cards de artistas divididos por dia)
+5. Programação 2027 (listas por dia + um carrossel único com todas as bandas, com autoplay)
 6. Bloco "Tramandaí te espera!"
 7. Blocos institucionais (Estrutura completa · Turismo · Sustentabilidade)
 8. Contato (formulário → e-mail)
@@ -43,12 +43,12 @@ Festival gratuito nos dias **08 e 09 de janeiro de 2027**, na Avenida Beira-Mar,
 
 | O quê | Onde |
 |---|---|
-| Artistas por dia (nome, foto, horário opcional) | `js/data.js` → `programacao` |
+| Artistas por dia (nome, foto, enquadramento `pos`, horário opcional) | `js/data.js` → `programacao` |
 | Realização (nome, logo) | `js/data.js` → `apoiadores` |
 | Redes sociais (header, menu e footer) | `js/data.js` → `social` |
 | Data/hora do contador ("Faltam X dias") | `js/data.js` → `evento.inicio` |
 
-Fotos aceitam um arquivo local (ex.: `assets/img/artistas/nei-van-soria.jpg`) ou URL do Unsplash. Sem foto, o card do artista mostra um fundo provisório.
+Fotos aceitam um arquivo local (ex.: `assets/img/artistas/nei-van-soria.jpg`, JPEG ~1200px de largura) ou URL do Unsplash. No carrossel todas aparecem em 4:3; se algum rosto ficar cortado, ajuste `pos` (`object-position`, ex.: `'50% 0%'` = topo). Sem foto, o slide mostra um fundo provisório.
 
 Textos fixos (hero, diferenciais, Tramandaí, blocos institucionais, footer) e metadados de SEO ficam no `index.html`. Se a data ou o local mudarem, atualize também `<title>`/`description`, Open Graph, o JSON-LD (`MusicEvent`), o hero e o footer.
 

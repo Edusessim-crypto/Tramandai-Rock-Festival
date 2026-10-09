@@ -34,6 +34,8 @@ window.FESTIVAL = {
      Line-up conforme o material oficial do Tchê Rock Tramandaí.
      foto: caminho do arquivo, ex.: 'assets/img/artistas/nei-van-soria.jpg'.
            Sem foto, o card mostra um fundo provisório com o nome.
+     pos: enquadramento da foto no carrossel (object-position), ex.: '50% 0%' = topo.
+          As fotos aparecem em 4:3; ajuste se algum rosto ficar cortado.
      hora: opcional — preencher quando os horários oficiais forem divulgados.
      PENDENTE: fotos oficiais de divulgação de cada artista. */
   programacao: [
@@ -42,9 +44,9 @@ window.FESTIVAL = {
       dia: 'Sexta-feira',
       data: '2027-01-08',
       atracoes: [
-        { nome: 'Diego Lopes e os Dínamos', foto: 'assets/img/artistas/diego-lopes-e-os-dinamos.jpg', alt: 'Diego Lopes e os Dínamos, os quatro integrantes sorrindo diante de uma parede de tijolos', pos: '50% 10%' },
+        { nome: 'Diego Lopes e os Dínamos', foto: 'assets/img/artistas/diego-lopes-e-os-dinamos.jpg', alt: 'Diego Lopes e os Dínamos, os quatro integrantes sorrindo diante de uma parede de tijolos', pos: '50% 0%' },
         { nome: 'Alemão Ronaldo', foto: 'assets/img/artistas/alemao-ronaldo.jpg', alt: 'Alemão Ronaldo, de óculos escuros e jaqueta preta, sentado, em retrato em preto e branco', pos: '50% 5%' },
-        { nome: 'Eternos Cascavelletes', foto: 'assets/img/artistas/eternos-cascavelletes.jpg', alt: 'Os cinco integrantes dos Eternos Cascavelletes, de roupas escuras, diante de um portão de galpão', pos: '50% 50%' },
+        { nome: 'Eternos Cascavelletes', foto: 'assets/img/artistas/eternos-cascavelletes.jpg', alt: 'Os cinco integrantes dos Eternos Cascavelletes entre as portas abertas de um galpão, com o céu nublado ao fundo', pos: '50% 50%' },
       ],
     },
     {
@@ -52,7 +54,7 @@ window.FESTIVAL = {
       dia: 'Sábado',
       data: '2027-01-09',
       atracoes: [
-        { nome: 'Velhavó', foto: 'assets/img/artistas/velhavo.jpg', alt: 'Os cinco integrantes da Velhavó no palco, diante do telão com o logo da banda', pos: '50% 25%' },
+        { nome: 'Velhavó', foto: 'assets/img/artistas/velhavo.jpg', alt: 'Os cinco integrantes da Velhavó, de roupas pretas, diante do logo da banda em fundo preto', pos: '50% 0%' },
         { nome: 'Bixo Cabeludo', foto: 'assets/img/artistas/bixo-cabeludo.jpg', alt: 'Os três integrantes do Bixo Cabeludo diante de uma cortina vermelha', pos: '50% 20%' },
         { nome: 'Neivan Soria', foto: 'assets/img/artistas/neivan-soria.jpg', alt: 'Neivan Soria, de óculos escuros, em retrato em preto e branco', pos: '50% 60%' },
         { nome: 'Acústicos & Valvulados', foto: 'assets/img/artistas/acusticos-e-valvulados.jpg', alt: 'Integrantes dos Acústicos & Valvulados, em grupo, ao pôr do sol', pos: '50% 50%' },
