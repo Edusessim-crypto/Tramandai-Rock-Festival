@@ -34,6 +34,7 @@ window.FESTIVAL = {
      Line-up conforme o material oficial do Tchê Rock Tramandaí.
      foto: caminho do arquivo, ex.: 'assets/img/artistas/nei-van-soria.jpg'.
            Sem foto, o card mostra um fundo provisório com o nome.
+     detalhe: opcional — linha menor abaixo do nome (ex.: bandas de origem dos músicos).
      pos: enquadramento da foto no carrossel (object-position), ex.: '50% 0%' = topo.
           As fotos aparecem em 4:3; ajuste se algum rosto ficar cortado.
      hora: opcional — preencher quando os horários oficiais forem divulgados.
@@ -47,6 +48,7 @@ window.FESTIVAL = {
         { nome: 'Diego Lopes e os Dínamos', foto: 'assets/img/artistas/diego-lopes-e-os-dinamos.jpg', alt: 'Diego Lopes e os Dínamos, os quatro integrantes sorrindo diante de uma parede de tijolos', pos: '50% 0%' },
         { nome: 'Alemão Ronaldo', foto: 'assets/img/artistas/alemao-ronaldo.jpg', alt: 'Alemão Ronaldo, de óculos escuros e jaqueta preta, sentado, em retrato em preto e branco', pos: '50% 5%' },
         { nome: 'Eternos Cascavelletes', foto: 'assets/img/artistas/eternos-cascavelletes.jpg', alt: 'Os cinco integrantes dos Eternos Cascavelletes entre as portas abertas de um galpão, com o céu nublado ao fundo', pos: '50% 50%' },
+        { nome: 'Jacques Maciel & Sady Homrich', detalhe: 'Rosa Tattooada · Nenhum de Nós', foto: 'assets/img/artistas/jacques-maciel-e-sady-homrich.jpg', alt: 'Três músicos, entre eles Jacques Maciel e Sady Homrich, fazendo pose diante de uma parede de guitarras', pos: '50% 20%' },
       ],
     },
     {

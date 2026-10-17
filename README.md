@@ -19,7 +19,7 @@ Festival gratuito nos dias **08 e 09 de janeiro de 2027**, na Avenida Beira-Mar,
 2. Hero (foto de palco, logo, frases manuscritas, card de data/local, "Evento gratuito")
 3. Faixa de diferenciais
 4. Sobre o festival
-5. Programação 2027 (listas por dia + um carrossel único com todas as bandas, com autoplay)
+5. Programação 2027 (um carrossel por dia, 3 bandas visíveis por vez — 2 no celular —, com autoplay)
 6. Bloco "Tramandaí te espera!"
 7. Blocos institucionais (Estrutura completa · Turismo · Sustentabilidade)
 8. Contato (formulário → e-mail)
