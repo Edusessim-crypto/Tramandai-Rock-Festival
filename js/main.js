@@ -125,16 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`).join('');
   }
 
-  /* ---------- Realização (seção abaixo do hero: mesmas marcas do rodapé, destaque no centro) ---------- */
+  /* ---------- Realização (seção abaixo do hero: mesmas marcas do rodapé, na ordem de data.js) ---------- */
   function renderizarRealizacao() {
     const raiz = $('[data-realizacao]');
     const marcas = (DADOS.apoiadores || []).find((grupo) => grupo.categoria === 'Realização')?.marcas || [];
     if (!raiz || !marcas.length) return;
-    const destaque = marcas.find((marca) => marca.destaque);
-    const demais = marcas.filter((marca) => marca !== destaque);
-    const meio = Math.ceil(demais.length / 2);
-    const ordem = destaque ? [...demais.slice(0, meio), destaque, ...demais.slice(meio)] : demais;
-    raiz.innerHTML = ordem.map((marca) => `
+    raiz.innerHTML = marcas.map((marca) => `
       <li class="realizacao__item${marca.destaque ? ' realizacao__item--destaque' : ''}">
         <span class="realizacao__logo">${marca.logo
           ? `<img src="${escapar(marca.logoClaro || marca.logo)}" alt="" loading="lazy" decoding="async">`
