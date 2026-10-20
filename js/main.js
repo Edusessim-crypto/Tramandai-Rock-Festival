@@ -125,6 +125,24 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`).join('');
   }
 
+  /* ---------- Realização (seção abaixo do hero: mesmas marcas do rodapé, destaque no centro) ---------- */
+  function renderizarRealizacao() {
+    const raiz = $('[data-realizacao]');
+    const marcas = (DADOS.apoiadores || []).find((grupo) => grupo.categoria === 'Realização')?.marcas || [];
+    if (!raiz || !marcas.length) return;
+    const destaque = marcas.find((marca) => marca.destaque);
+    const demais = marcas.filter((marca) => marca !== destaque);
+    const meio = Math.ceil(demais.length / 2);
+    const ordem = destaque ? [...demais.slice(0, meio), destaque, ...demais.slice(meio)] : demais;
+    raiz.innerHTML = ordem.map((marca) => `
+      <li class="realizacao__item${marca.destaque ? ' realizacao__item--destaque' : ''}">
+        <span class="realizacao__logo">${marca.logo
+          ? `<img src="${escapar(marca.logoClaro || marca.logo)}" alt="" loading="lazy" decoding="async">`
+          : ''}</span>
+        <span class="realizacao__name">${escapar(marca.nome)}</span>
+      </li>`).join('');
+  }
+
   /* ============================================================
      2. CONTADOR (linha compacta no card de data do hero)
      ============================================================ */
@@ -579,6 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderizarSocial();
   renderizarProgramacao();
   renderizarApoiadores();
+  renderizarRealizacao();
   iniciarContador();
   iniciarMenu();
   iniciarHeader();

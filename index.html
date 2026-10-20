@@ -118,7 +118,6 @@
         <li><a href="#festival">O Festival</a></li>
         <li><a href="#programacao">Programação</a></li>
         <li><a href="#turismo">Turismo</a></li>
-        <li><a href="#informacoes">Informações</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
       <div class="site-nav__footer">
@@ -143,17 +142,13 @@
 
   <!-- ===================== 2 · HERO ===================== -->
   <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+    <!-- Foto anterior guardada em assets/img/hero/hero-publico-original.jpg -->
     <picture class="hero__media">
-      <source media="(max-width: 767px)"
-        srcset="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&amp;fit=crop&amp;w=600&amp;h=1100&amp;q=70 600w,
-                https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&amp;fit=crop&amp;w=900&amp;h=1650&amp;q=70 900w"
-        sizes="100vw">
-      <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"
-        srcset="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&amp;fit=crop&amp;w=1024&amp;q=70 1024w,
-                https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&amp;fit=crop&amp;w=1600&amp;q=70 1600w,
-                https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&amp;fit=crop&amp;w=2400&amp;q=70 2400w"
-        sizes="100vw" width="1600" height="1067" fetchpriority="high" decoding="async"
-        alt="Público com as mãos para o alto diante do palco iluminado durante um show">
+      <img src="assets/img/hero/hero-palco-tramandai.jpg"
+        srcset="assets/img/hero/hero-palco-tramandai-1024.jpg 1024w,
+                assets/img/hero/hero-palco-tramandai.jpg 1672w"
+        sizes="100vw" width="1672" height="941" fetchpriority="high" decoding="async"
+        alt="Palco do Tchê Rock iluminado à noite, com telões, o público lotando a orla e o letreiro Eu Amo Tramandaí">
     </picture>
 
     <div class="container hero__inner">
@@ -193,6 +188,18 @@
         <a class="btn btn--outline" href="#turismo">Tramandaí te espera</a>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ===================== 2.5 · REALIZAÇÃO ===================== -->
+  <section class="realizacao" id="realizacao" aria-labelledby="realizacao-titulo">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" id="realizacao-titulo">Realização</h2>
+        <span class="section-head__rule" aria-hidden="true"></span>
+      </div>
+      <!-- Gerado a partir de js/data.js (apoiadores) -->
+      <ul class="realizacao__logos" data-realizacao></ul>
     </div>
   </section>
 
@@ -343,10 +350,6 @@
         </ul>
 
         <ul class="contact__info">
-          <li class="contact__info-item">
-            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg>
-            <span><strong>Produção e informações</strong>Realização Gestor Produtora</span>
-          </li>
           <li class="contact__info-item">
             <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg>
             <span><strong>Tramandaí / RS</strong>Avenida Beira-Mar · 08 e 09 de janeiro de 2027</span>

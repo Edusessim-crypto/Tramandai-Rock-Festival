@@ -64,17 +64,21 @@ window.FESTIVAL = {
     },
   ],
 
-  /* ---------- Realização (rodapé) ----------
+  /* ---------- Realização (seção abaixo do hero + rodapé) ----------
      logo: caminho do arquivo (ex.: 'assets/img/apoiadores/gestor.svg').
            Sem logo, o nome aparece em um espaço reservado.
-     Ordem: Gestor Produtora · Secretaria Municipal de Turismo · Prefeitura. */
+     Ordem: Gestor Produtora · Secretaria Municipal de Turismo · Prefeitura.
+     A mesma lista alimenta a seção Realização logo abaixo do hero;
+     destaque: true = logo maior, no centro (Prefeitura de Tramandaí).
+     logoClaro: versão para a seção Realização, que tem fundo branco
+                (logos com texto branco ganham uma cópia com o texto escuro). */
   apoiadores: [
     {
       categoria: 'Realização',
       marcas: [
-        { nome: 'Gestor Produtora', logo: 'assets/img/apoiadores/gestor-produtora.png' },
-        { nome: 'Secretaria Municipal de Turismo', logo: 'assets/img/apoiadores/secretaria-turismo.jpg' },
-        { nome: 'Prefeitura de Tramandaí', logo: 'assets/img/apoiadores/prefeitura-tramandai.png' },
+        { nome: 'Gestor Produtora', logo: 'assets/img/apoiadores/gestor-produtora.png', logoClaro: 'assets/img/apoiadores/gestor-produtora-escuro.png' },
+        { nome: 'Secretaria Municipal de Turismo', logo: 'assets/img/apoiadores/secretaria-turismo.jpg', logoClaro: 'assets/img/apoiadores/secretaria-turismo-recorte.png' },
+        { nome: 'Prefeitura de Tramandaí', logo: 'assets/img/apoiadores/prefeitura-tramandai.png', logoClaro: 'assets/img/apoiadores/prefeitura-tramandai-escuro.png', destaque: true },
       ],
     },
   ],

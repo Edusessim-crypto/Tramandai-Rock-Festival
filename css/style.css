@@ -286,6 +286,50 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ============================================================
+   2.5 · REALIZAÇÃO (faixa branca logo abaixo do hero; Prefeitura em destaque)
+   ============================================================ */
+.realizacao {
+  --borda-clara: #E2E2E2;
+  background: var(--white); color: var(--black);
+  padding-block: clamp(2.75rem, 6vw, 4.5rem);
+}
+.realizacao .section-title { color: var(--black); }
+
+/* Celular: Prefeitura ocupa a linha de cima; as outras duas dividem a de baixo */
+.realizacao__logos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.realizacao__item {
+  display: flex; flex-direction: column; min-width: 0;
+  background: var(--white); border: 1px solid var(--borda-clara);
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.realizacao__item:hover { border-color: #C9C9C9; box-shadow: 0 10px 30px rgba(0, 0, 0, .06); }
+.realizacao__logo { display: grid; place-items: center; flex: 1; min-height: 110px; padding: 1.25rem 1rem; }
+.realizacao__logo img { width: auto; height: auto; max-width: 100%; max-height: 64px; object-fit: contain; }
+.realizacao__name {
+  padding: .6rem .75rem; border-top: 1px solid var(--borda-clara); text-align: center;
+  font-family: var(--font-condensed); font-weight: 600; font-size: .78rem; line-height: 1.2;
+  letter-spacing: .1em; text-transform: uppercase; color: #6A6A6A;
+}
+
+/* Destaque: card maior, filete vermelho no topo e nome em preto */
+.realizacao__item--destaque { grid-column: 1 / -1; order: -1; border-top: 4px solid var(--red); }
+.realizacao__item--destaque .realizacao__logo { min-height: 190px; }
+.realizacao__item--destaque .realizacao__logo img { max-height: 150px; }
+.realizacao__item--destaque .realizacao__name { color: var(--black); font-weight: 700; font-size: .9rem; }
+
+/* A partir do tablet: uma linha, Prefeitura no centro e mais larga */
+@media (min-width: 768px) {
+  .realizacao__logos { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr); gap: 1rem; }
+  .realizacao__item--destaque { grid-column: auto; order: 0; }
+  .realizacao__logo { padding: 1.75rem 1.5rem; }
+  .realizacao__logo img { max-height: 84px; max-width: min(100%, 230px); }
+  .realizacao__item--destaque .realizacao__logo { min-height: 240px; }
+  .realizacao__item--destaque .realizacao__logo img { max-height: 190px; }
+  .realizacao__name { padding: .8rem 1rem; font-size: .85rem; }
+  .realizacao__item--destaque .realizacao__name { font-size: 1rem; }
+}
+
+/* ============================================================
    3 · FAIXA DE DIFERENCIAIS
    ============================================================ */
 .features {
